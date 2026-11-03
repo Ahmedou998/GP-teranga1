@@ -1,0 +1,7 @@
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { SiteHeader } from "@/components/site-header";
+
+export default function ShipmentFormPage() {
+  return <><SiteHeader/><main className="container" style={{padding:"50px 0 90px",maxWidth:720}}><Link href="/publier" style={{display:"inline-flex",gap:8,alignItems:"center",color:"#607168",fontSize:13,fontWeight:700}}><ArrowLeft size={15}/> Retour</Link><h1 style={{fontSize:42,margin:"22px 0 8px"}}>Décrire votre colis</h1><p style={{color:"#718078",lineHeight:1.7}}>Le formulaire sera connecté à la création de compte et à l'API après activation de l'authentification.</p><div className="surface" style={{padding:24,display:"grid",gap:16,marginTop:24}}><div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:14}}><div className="field"><label>Ville de départ</label><input placeholder="Ex. Dakar" disabled/></div><div className="field"><label>Ville d'arrivée</label><input placeholder="Ex. Saint-Louis" disabled/></div></div><div className="field"><label>Description du colis</label><input placeholder="Documents, vêtements, etc." disabled/></div><div className="field"><label>Poids estimé (kg)</label><input type="number" placeholder="Ex. 2" disabled/></div><button className="btn btn-primary" disabled style={{opacity:.55,cursor:"not-allowed"}}>Publication bientôt disponible</button><small style={{color:"#8a968f"}}>Cette interface est un aperçu. Elle ne collecte ni ne transmet de données.</small></div></main></>;
+}
