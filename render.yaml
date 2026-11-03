@@ -4,14 +4,14 @@ databases:
     user: teranga_gp
     plan: basic-256mb
     region: frankfurt
-
+buildCommand: npm ci --include=dev && npx prisma generate && npm run build
 services:
   - type: web
     name: teranga-gp
     runtime: node
     plan: starter
     region: frankfurt
-    buildCommand: npm ci && npx prisma generate && npm run build
+
     startCommand: npx prisma migrate deploy && npm run start
     healthCheckPath: /api/health
     envVars:
