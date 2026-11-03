@@ -1,6 +1,6 @@
 # Teranga GP
 
-Marketplace collaborative de transport de colis entre particuliers, pensée pour le marché sénégalais.
+Marketplace collaborative de transport de colis entre particuliers, en cours d’internationalisation pour les liaisons entre l’Afrique et l’Europe, dans les deux sens.
 
 > **État du livrable :** socle MVP de développement. L'interface publique, le schéma PostgreSQL, les API de lecture/création, la validation et la configuration CI/Render sont fournis. Ce dépôt n'est **pas prêt à accepter des transactions réelles** : authentification, autorisation, vérification d'identité, paiement, assurance, modération et parcours de livraison doivent être intégrés et audités avant toute mise en production.
 
@@ -115,6 +115,12 @@ Avant d'ouvrir le service au public, implémenter au minimum :
 - Sauvegardes, alertes, monitoring, tests de charge et audit de sécurité.
 
 Aucun portefeuille client, séquestre ou paiement n'est implémenté dans cette version.
+
+## Portée internationale et limites actuelles
+
+Les champs `origin` et `destination` acceptent déjà du texte libre (ville et pays) et la recherche API compare ces champs sans imposer de liste de villes. L’interface publique a été adaptée pour saisir n’importe quelle ville/pays et présente des exemples Afrique ↔ Europe dans les deux sens.
+
+**La prise en charge commerciale internationale n’est pas encore complète :** le modèle et les validations de prix restent actuellement libellés et structurés en XOF (`pricePerKgXof`, `budgetXof`, `declaredValueXof`). Il faut ajouter une devise ISO 4217 cohérente aux trajets, colis, réservations et paiements, convertir/afficher les montants sans ambiguïté, puis déployer une migration Prisma avant d’accepter des prix dans d’autres devises. Les formulaires de publication restent désactivés jusqu’à l’authentification et à cette intégration. Vérifier aussi les règles douanières, les marchandises autorisées et les obligations de transport propres à chaque pays.
 
 ## Données de démonstration
 
