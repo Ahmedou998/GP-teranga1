@@ -9,28 +9,3 @@ coverage/
 *.log
 .DS_Store
 .vercel/
-# Environment variables and secrets
-.env
-.env.*
-!.env.example
-# Dependencies
-node_modules/
-# Next.js
-.next/
-out/
-# Build and generated files
-dist/
-build/
-coverage/
-# Local files
-.DS_Store
-*.log
-# Exclusions finales
-teranga-gp/
-*.tsbuildinfo
-node_modules/
-.next/
-coverage/
-.env
-.env.*
-!.env.example
